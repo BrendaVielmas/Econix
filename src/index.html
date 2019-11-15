@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <title>Open</title>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <section id = "mainHome">
+    <p id="alertForVerification">Verifica tu cuenta desde tu correo electrónico para acceder.</p>
+    <header><img alt="Logo de Open: red social accesible" class="principalLogo" src="images/logo2.png"></header>
+
+    <section id="logInPage">
+      <p id="slogan" aria-labelledby="slogan" class="contextWords">Una red de puertas abiertas</p>
+
+      <section role="log" aria-live="polite">
+        <p id="notificationARIA"></p>
+      </section>
+
+      <section role="form" aria-label="formulario para ingresar con correo electrónico">
+
+          <label class="labelForHome" for="email">Correo Electrónico</label>
+          <input type="email" class="input" id="userEmail"  size="20" required/>
+          <label class="labelForHome" for="password">Contraseña</label>
+          <input type="password" class="input" id="userPassword" size="20"required/>
+          <button class=button id=buttonSignIn>Iniciar Sesión</button>
+      </section>
+
+      <section>
+          <p class="contextWords">¿No tienes cuenta?</p>
+          <p class="textForClick" id="createAcount" role="link" aria-labelledby="link para formulario de registro de nueva cuenta">Regístrate</p>
+      </section>
+
+      <p class="contextWords">ó</p>
+      <div id="authContainer" role="menubar" aria-label="menú para ingresar con cuenta de google o de facebook"></div>
+
+      <p id="readme" href= "https://brendavielmas.github.io/GDL003-social-network/" class="textForClick">Ir a Readme</p>
+    <!--  <a class="textForClick" href="https://brendavielmas.github.io/GDL003-social-network/"></a> -->
+
+    </section>
+
+    <section id = "signInPage">
+      <label for="email"></label>
+      <input type="email" class="input" id="enterEmail" placeholder="Correo Electrónico" size="20" required />
+      <label for="password"></label>
+      <input type="password" class="input" id="enterPassword" placeholder="Contraseña" size="20" required/>
+      <label for="name"></label>
+      <input type="text" class="input" id="enterName" placeholder="Nombre Completo" size="20" required/>
+      <button class="button" id=buttonRegister>Crear cuenta</button>
+      <button class="button" id=buttonComeBack>Volver</button>
+    </section>
+  </section>
+
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.11.0/firebase-firestore.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+
+
+  </body>
+</html>
