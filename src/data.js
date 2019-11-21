@@ -1,11 +1,11 @@
 const firebaseConfig = {
-	apiKey: "AIzaSyCUsBU3Hw9_o8myi2rql4FKoFxm7lIoRqc",
-	authDomain: "laboratoria-sn.firebaseapp.com",
-	databaseURL: "https://laboratoria-sn.firebaseio.com",
-	projectId: "laboratoria-sn",
-	storageBucket: "",
-	messagingSenderId: "67746155841",
-	appId: "1:67746155841:web:88baef8d3cf9be32"
+	apiKey: "AIzaSyCRTZD5G445OJHz5ws_8hB9PNzYTdOw4kw",
+    authDomain: "social-network2-bc07b.firebaseapp.com",
+    databaseURL: "https://social-network2-bc07b.firebaseio.com",
+    projectId: "social-network2-bc07b",
+    storageBucket: "social-network2-bc07b.appspot.com",
+    messagingSenderId: "730773946253",
+    appId: "1:730773946253:web:0802abed54ec8ab818c7c4"
 };
 
 firebase.initializeApp(firebaseConfig);

@@ -1,10 +1,11 @@
 {
-  "name": "Social-Network",
+  "name": "social-network",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/data.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/BrendaVielmas/Social-Network/issues"
   },
-  "homepage": "https://github.com/BrendaVielmas/Social-Network#readme"
+  "homepage": "https://github.com/BrendaVielmas/Social-Network#readme",
+  "dependencies": {
+    "i": "^0.3.6"
+  }
 }

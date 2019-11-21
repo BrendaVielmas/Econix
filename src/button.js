@@ -1,3 +1,4 @@
+
 const homePage = document.getElementById("homePage");
 const timeLine = document.getElementById("timeLine")
 const timelinePost = document.getElementById("timelinePost");
@@ -39,7 +40,7 @@ db.collection("Users").orderBy("dates", "desc").where("status", "==", "Publico")
 						<button class="buttonEdit" id="${doc.id}buttonEditPost" data-id="${doc.id}">Editar</button>
 						<button class="buttonDelete" id="${doc.id}buttonDelete" data-id="${doc.id}">Eliminar</button>
 						<section id="${doc.id}buttonForLike">
-							<img src="images/heart.svg" id="${doc.id}buttonLike" class="buttonLike" data-id="${doc.id}" alt="botón de me gusta">
+							<img src="images/pepper.png" id="${doc.id}buttonLike" class="buttonLike" data-id="${doc.id}" alt="botón de me gusta">
 							<p class= "txtlike">Me gusta ${postOfUser.likes}</p>
 						</section>
 					</section>`
