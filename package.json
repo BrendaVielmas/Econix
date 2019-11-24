@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BrendaVielmas/Social-Network.git"
+    "url": "git+https://github.com/BrendaVielmas/Econix.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/BrendaVielmas/Social-Network/issues"
+    "url": "https://github.com/BrendaVielmas/Econix/issues"
   },
-  "homepage": "https://github.com/BrendaVielmas/Social-Network#readme",
+  "homepage": "https://github.com/BrendaVielmas/Econix#readme",
   "dependencies": {
     "i": "^0.3.6"
   }
