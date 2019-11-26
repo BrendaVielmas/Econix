@@ -103,39 +103,7 @@ p {
 #selectTheStatus, #selectTheStatusPerfil{
   text-align: center;
 }
-#profile{
-  display: inline-block;
-  width: 23rem;
-  height: 14rem;
-  margin: 2rem;
-  text-align: left;
-  vertical-align: top;   
-}      
-#imgProfile{
-  display: inline-block;
-  width: 6.75rem;
-  height: 6.75rem;
-  border-radius: 9.37rem;
-  margin-right: 2rem;
-}
-#nameProfile {
-  display: inline-block;
-  margin: 0;
-}
-.buttonEditPhotoProfile {
-  margin-bottom: 5rem;
-  text-align: left;
-  display: block;
-  margin-left: 1rem;
-  height: 1.5rem;
-  color: #fff;
-  letter-spacing: 0.0625rem;
-  font-size: .9rem;
-  border-radius: 3.125rem;
-  background-color: #000;
-  border: 0.1875rem solid #000;
-  cursor : pointer;
-}
+
 .input {
   display: block;
   width: 55%;
@@ -180,8 +148,6 @@ display: block;
   letter-spacing: 0.0625rem;
   font-size: .9rem;
   border-radius: 3.125rem;
-  background-color: #000;
-  border: 0.1875rem solid #000;
   cursor : pointer;
   margin-top: 1rem;
   
@@ -225,7 +191,7 @@ display: block;
   width: 20rem;
   min-height: 5rem;
   max-height: 20rem;
-  background-color: rgb(245, 217, 139) ;
+  background-color: rgb(197, 197, 197) ;
   margin: 2rem;
   margin-left: auto;
   margin-right: auto;
@@ -270,7 +236,6 @@ display: block;
     width: 45rem;
     min-height: 10rem;
     max-height: 30rem;
-    border: black 3px solid;
     margin: 2rem;
     margin-left: auto;
     margin-right: auto;
@@ -333,8 +298,6 @@ display: block;
   letter-spacing: 0.0625rem;
   font-size: 1.8rem;
   border-radius: 3.125rem;
-  background-color: #000;
-  border: 0.1875rem solid #000;
   cursor : pointer;
   margin-top: 1rem;
 }
@@ -368,7 +331,6 @@ input[type="radio"]{
     max-width: 45rem;
     min-height: 10rem;
     max-height: 30rem;
-    border: black 3px solid;
     margin: 1.5rem;
     margin-left: 2rem;
     margin-right: 2rem;
@@ -453,8 +415,6 @@ input[type="radio"]{
   letter-spacing: 0.0625rem;
   font-size: 1.8rem;
   border-radius: 3.125rem;
-  background-color: #000;
-  border: 0.1875rem solid #000;
   cursor : pointer;
   margin-top: 1rem;
 }

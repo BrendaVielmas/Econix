@@ -52,7 +52,7 @@ db.collection("Users").orderBy("dates", "desc").where("status", "==", "Public")
 				<p class= "txtname">${postOfUser.name}</p>
 				<p class= "txtmns">${postOfUser.message}</p>
 				<section id="buttonForLike">
- 					<img src="images/heart.svg" id="${doc.id}buttonLike" class="buttonLike" data-id="${doc.id}" alt="">
+ 					<img src="images/pepper.png id="${doc.id}buttonLike" class="buttonLike" data-id="${doc.id}" alt="">
  					<p class= "txtlike">I like it! ${postOfUser.likes}</p>
  				</section>
  			</section>`
@@ -126,7 +126,7 @@ dbUid.collection("Users").orderBy("dates", "desc")
 				<button class="buttonEditProfile" id="${doc.id}buttonEdit" data-id="${doc.id}">Edit</button>
 				<button class="buttonDelete" id="${doc.id}buttonDelete" data-id="${doc.id}">Delete</button>
 				<section id="${doc.id}buttonForLikeProfile">
-					<img src="images/heart.svg" id="${doc.id}buttonLike" class="buttonLike" data-id="${doc.id}" alt="botón de I like it!">
+					<img src=""images/pepper.png"" id="${doc.id}buttonLike" class="buttonLike" data-id="${doc.id}" alt="">
 					<p class= "txtlike">I like it! ${postOfUserProfile.likes}</p>
 				</section>
 			</section>`
@@ -179,12 +179,6 @@ firebase.auth().onAuthStateChanged(function(user) {
 			email: user.email,
 			photo: user.photoURL
 		}
-		document.getElementById("profile").innerHTML = `
-		<img id= "imgProfile" src=${user.photoURL}><strong><p style="vertical-align:top;"
-     id= "nameProfile">${user.displayName}</p></strong>` + `
-			<section>
-		 		<button class="buttonEditPhotoProfile">Cambiar</button>
-		 </section>` ;
 	} else {
 	};
 })
