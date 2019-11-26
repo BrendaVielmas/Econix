@@ -1,6 +1,6 @@
 /*moviles 320x568---iPhone 5/SE*/
 body, html {
-
+  color: rgb(153, 153, 153);
   margin: 0;
   padding: 0;
   width: 100%;
@@ -49,7 +49,7 @@ p {
   text-align: center;
   margin-top: 2%;
   margin-bottom: 5%;
-  color: 	#1a1a1a;
+  color: 	#666666;
   letter-spacing: 0.0625rem;
 }
 .txtdate{
@@ -147,7 +147,8 @@ p {
   border-radius: 0rem;
   background: transparent;
   border: none;
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid rgb(153, 153, 153);
+  
 }
 .labelForHome {
   font-size: 1.25rem;
@@ -209,7 +210,7 @@ display: block;
   text-decoration: underline;
   font-weight: bold;
   cursor: pointer;
-  color:#333333;
+  color:#727272;
 }
 #textForCreateAcount {
   text-align: center;
@@ -492,7 +493,7 @@ input[type="radio"]{
 text-align: center;
 }
 .input {
-  width: 30%;
+  width: 20%;
 }
 }
 

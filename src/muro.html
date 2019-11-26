@@ -2,40 +2,40 @@
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
-    <title>Open</title>
+    <title>Econix</title>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
     <link rel="stylesheet" href="style.css"/>
   </head>
 
   <body>
     <nav id="nav">
-      <img class= "icon" id ="signOut" src="https://image.flaticon.com/icons/png/512/64/64498.png"  alt="botón para cerrar sesión">
-      <img class= "icon" id ="goHomePage" src="https://image.flaticon.com/icons/png/512/69/69524.png" alt="botón para ir a página de inicio, muro general">
-      <img class= "icon" id ="goProfilePage" src="https://image.flaticon.com/icons/png/512/64/64096.png" alt="botón para ir a tu página de perfil">
+      <img class= "icon" id ="signOut" src="https://image.flaticon.com/icons/png/512/64/64498.png"  alt="">
+      <img class= "icon" id ="goHomePage" src="https://image.flaticon.com/icons/png/512/69/69524.png" alt="">
+      <img class= "icon" id ="goProfilePage" src="https://image.flaticon.com/icons/png/512/64/64096.png" alt="">
     </nav>
-    <header><img class="principalLogo" src="images/econix.png" alt="Openix, una red de puertas abiertas"></header>
+    <header><img class="principalLogo" src="images/econix.png"></header>
     <main>
       <section id="homePage">
-        <p id="homePageWelcome">¡Hola! ¿Qué compartirás hoy?<p>
+        <p id="homePageWelcome">Hi! What will you share today?<p>
         <p id = "alertForPostEmpty"></p>
-        <textArea class="post" id="timelinePost" type="textArea" rows="6"  cols="30" placeholder="¿Cómo te sientes?" required></textarea>
+        <textArea class="post" id="timelinePost" type="textArea" rows="6"  cols="30" placeholder="What's up?" required></textarea>
         <section id="selectTheStatus">
-          <label><input type="radio" name="radioForStatus" value="Publico" checked="checked" aria-labelledby="opción para crear post público">Público</label>
-          <label><input type="radio" name="radioForStatus" value="Privado" aria-labelledby="opción para crear post privado">Privado</label>
+          <label><input type="radio" name="radioForStatus" value="Public" checked="checked">Public</label>
+          <label><input type="radio" name="radioForStatus" value="Private" >Private</label>
         </section>
-        <button class="button" id="buttonForCreatePost">Publicar</button>
+        <button class="button" id="buttonForCreatePost">Post</button>
         <section id="sectionWithPost"></section>
       </section>
 
       <section id="timeLine">
         <div id= "profile"></div>
         <p id = "alertForPostEmptyProfile"></p>
-        <textArea class= "post" class="textarea" id= "timelinePostPerfil" type="textArea" rows= "6"  cols= "70" placeholder= "¿Cómo te sientes?" role="textbox" name="cuadro de escritura de post" required></textarea>
+        <textArea class= "post" class="textarea" id= "timelinePostPerfil" type="textArea" rows= "6"  cols= "70" placeholder= "What's up?" role="textbox" required></textarea>
         <section id="selectTheStatusPerfil">
-          <label><input type="radio" name="radioForStatusProfile" value="Publico" checked="checked">Público</label>
-          <label><input type="radio" name="radioForStatusProfile" value="Privado">Privado</label>
+          <label><input type="radio" name="radioForStatusProfile" value="Public" checked="checked">Public</label>
+          <label><input type="radio" name="radioForStatusProfile" value="Private">Private</label>
         </section>
-        <button class="button" id="buttonForCreatePostPerfil">Publicar</button>
+        <button class="button" id="buttonForCreatePostPerfil">Post</button>
         <section id="sectionWithUidPost"></section>
       </section>
       <img class= "icon" id ="buttonReset" src="https://image.flaticon.com/icons/png/512/44/44674.png">

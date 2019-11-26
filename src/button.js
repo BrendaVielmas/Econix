@@ -9,7 +9,7 @@ let alertForPostEmptyProfile = document.getElementById("alertForPostEmptyProfile
 //inicialize of timeline part
 
 let db = firebase.firestore()
-db.collection("Users").orderBy("dates", "desc").where("status", "==", "Publico")
+db.collection("Users").orderBy("dates", "desc").where("status", "==", "Public")
 	.onSnapshot((mnsj) => {
 
 		document.getElementById("sectionWithPost").innerHTML = "";
@@ -20,13 +20,13 @@ db.collection("Users").orderBy("dates", "desc").where("status", "==", "Publico")
 				console.log(doc.id, " => ", doc.data());
 
 				let postOfUser = doc.data();
-				let publicChecked = postOfUser.status == "Publico" ? "checked" : "";
-				let privateChecked = postOfUser.status == "Privado" ? "checked" : "";
+				let publicChecked = postOfUser.status == "Public" ? "checked" : "";
+				let privateChecked = postOfUser.status == "Private" ? "checked" : "";
 				document.getElementById("sectionWithPost").innerHTML += `
 					<section class="invisible" id = "${doc.id}inputEditPost">
 						<input class= "post" id= "${doc.id}editPostInput" type="textArea" size = "30" value = "${postOfUser.message}"></input>
-						<label><input type="radio" name="${doc.id}radioForStatus" value="Publico" ${publicChecked}>Público</label>
-						<label><input type="radio" name="${doc.id}radioForStatus" value="Privado" ${privateChecked}>Privado</label>
+						<label><input type="radio" name="${doc.id}radioForStatus" value="Public" ${publicChecked}>Public</label>
+						<label><input type="radio" name="${doc.id}radioForStatus" value="Private" ${privateChecked}>Private</label>
 						<section id="boxForBtnSaveCancel">
 							<button class= "saveButton" id="${doc.id}saveButton" data-id="${doc.id}">Guardar</button>
 							<button class= "cancel" id="${doc.id}cancel" data-id="${doc.id}">Cancelar</button>
@@ -117,14 +117,14 @@ dbUid.collection("Users").orderBy("dates", "desc")
 				console.log(doc.id, " => ", doc.data());
 
 				let postOfUserProfile = doc.data();
-				let publicChecked = postOfUserProfile.status == "Publico" ? "checked" : "";
-				let privateChecked = postOfUserProfile.status == "Privado" ? "checked" : "";
+				let publicChecked = postOfUserProfile.status == "Public" ? "checked" : "";
+				let privateChecked = postOfUserProfile.status == "Private" ? "checked" : "";
 				document.getElementById("sectionWithUidPost").innerHTML += `
 
 			<section class="invisible" id="${doc.id}inputEditPostProfile">
 				<input class= "post" id= "${doc.id}editPostInputProfile" type="textArea" size = "30" value = "${postOfUserProfile.message}" aria-labelled="post"></input>
-				<label><input type="radio" name="${doc.id}radioForStatusProfile" value="Publico" ${publicChecked}>Público</label>
-				<label><input type="radio" name="${doc.id}radioForStatusProfile" value="Privado" ${privateChecked}>Privado</label>
+				<label><input type="radio" name="${doc.id}radioForStatusProfile" value="Public" ${publicChecked}>Public</label>
+				<label><input type="radio" name="${doc.id}radioForStatusProfile" value="Private" ${privateChecked}>Private</label>
 				<section id="boxForBtnSaveCancelProfile">
 					<button class= "saveButtonProfile" id="${doc.id}saveButton" data-id="${doc.id}">Guardar</button>
 					<button class= "cancel" id="${doc.id}cancelButton" data-id="${doc.id}">Cancelar</button>
@@ -261,7 +261,7 @@ const createPostFunction = (docRef) => {
 	let saveResultOfFunction = window.data.createPost(message, status, dates);
 
 	if (saveResultOfFunction != "") {
-		alertForPostEmpty.innerHTML = "Escribe un mensaje para empezar a publicar."
+		alertForPostEmpty.innerHTML = "Escribe un mensaje para empezar a Post."
 	}
 	timelinePost.value = "";
 };
@@ -280,7 +280,7 @@ const createPostFunctionProfile = (docRef) => {
 	let saveResultOfFunction = window.data.createPost(message, status, dates);
 	timelinePostPerfil.value = "";
 	if (saveResultOfFunction != "") {
-		alertForPostEmptyProfile.innerHTML = "Escribe un mensaje para empezar a publicar."
+		alertForPostEmptyProfile.innerHTML = "Escribe un mensaje para empezar a Post."
 	}
 };
 
