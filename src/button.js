@@ -11,14 +11,11 @@ let alertForPostEmptyProfile = document.getElementById("alertForPostEmptyProfile
 let db = firebase.firestore()
 db.collection("Users").orderBy("dates", "desc").where("status", "==", "Public")
 	.onSnapshot((mnsj) => {
-
 		document.getElementById("sectionWithPost").innerHTML = "";
-
 		mnsj.forEach((doc) => {
 			if (doc.data().uid === uid) {
 				// doc.data() is never undefined for query doc snapshots
 				console.log(doc.id, " => ", doc.data());
-
 				let postOfUser = doc.data();
 				let publicChecked = postOfUser.status == "Public" ? "checked" : "";
 				let privateChecked = postOfUser.status == "Private" ? "checked" : "";
@@ -28,8 +25,8 @@ db.collection("Users").orderBy("dates", "desc").where("status", "==", "Public")
 						<label><input type="radio" name="${doc.id}radioForStatus" value="Public" ${publicChecked}>Public</label>
 						<label><input type="radio" name="${doc.id}radioForStatus" value="Private" ${privateChecked}>Private</label>
 						<section id="boxForBtnSaveCancel">
-							<button class= "saveButton" id="${doc.id}saveButton" data-id="${doc.id}">Guardar</button>
-							<button class= "cancel" id="${doc.id}cancel" data-id="${doc.id}">Cancelar</button>
+							<button class= "saveButton" id="${doc.id}saveButton" data-id="${doc.id}">Save</button>
+							<button class= "cancel" id="${doc.id}cancel" data-id="${doc.id}">Cancel</button>
 						</section>			
 						</section>
 
@@ -37,18 +34,17 @@ db.collection("Users").orderBy("dates", "desc").where("status", "==", "Public")
 						<p class= "txtdate"> ${postOfUser.dates}</p>
 						<p class= "txtname">${postOfUser.name}</p>
 						<p class= "txtmns">${postOfUser.message}</p>
-						<button class="buttonEdit" id="${doc.id}buttonEditPost" data-id="${doc.id}">Editar</button>
-						<button class="buttonDelete" id="${doc.id}buttonDelete" data-id="${doc.id}">Eliminar</button>
+						<button class="buttonEdit" id="${doc.id}buttonEditPost" data-id="${doc.id}">Edit</button>
+						<button class="buttonDelete" id="${doc.id}buttonDelete" data-id="${doc.id}">Delete</button>
 						<section id="${doc.id}buttonForLike">
-							<img src="images/pepper.png" id="${doc.id}buttonLike" class="buttonLike" data-id="${doc.id}" alt="botón de me gusta">
-							<p class= "txtlike">Me gusta ${postOfUser.likes}</p>
+							<img src="images/pepper.png" id="${doc.id}buttonLike" class="buttonLike" data-id="${doc.id}" alt="">
+							<p class= "txtlike">I like it! ${postOfUser.likes}</p>
 						</section>
 					</section>`
 
 
 			} else {
 				console.log(doc.id, " => ", doc.data());
-
 				let postOfUser = doc.data();
 				document.getElementById("sectionWithPost").innerHTML += `
  			<section id="${doc.id}thisPost" class = "postInBox">
@@ -56,8 +52,8 @@ db.collection("Users").orderBy("dates", "desc").where("status", "==", "Public")
 				<p class= "txtname">${postOfUser.name}</p>
 				<p class= "txtmns">${postOfUser.message}</p>
 				<section id="buttonForLike">
- 					<img src="images/heart.svg" id="${doc.id}buttonLike" class="buttonLike" data-id="${doc.id}" alt="botón de me gusta">
- 					<p class= "txtlike">Me gusta ${postOfUser.likes}</p>
+ 					<img src="images/heart.svg" id="${doc.id}buttonLike" class="buttonLike" data-id="${doc.id}" alt="">
+ 					<p class= "txtlike">I like it! ${postOfUser.likes}</p>
  				</section>
  			</section>`
 
@@ -84,7 +80,6 @@ db.collection("Users").orderBy("dates", "desc").where("status", "==", "Public")
 		for (let i = 0; i < cancel.length; i++) {
 			cancel[i].addEventListener("click", () => {
 				let docId = cancel[i].getAttribute("data-id");
-				console.log("Di click");
 				document.getElementById(`${docId}inputEditPost`).style.display = "none";
 				document.getElementById(`${docId}thisPost`).style.display = "block";
 				document.getElementById(`${docId}buttonForLike`).style.display = "block";
@@ -104,18 +99,12 @@ db.collection("Users").orderBy("dates", "desc").where("status", "==", "Public")
 
 //inicialize of profile part
 let uid = localStorage.getItem("uid");
-console.log(uid);
-
 let dbUid = firebase.firestore()
 dbUid.collection("Users").orderBy("dates", "desc")
 	.onSnapshot((mnsj) => {
 		document.getElementById("sectionWithUidPost").innerHTML = "";
-
 		mnsj.forEach((doc) => {
 			if (doc.data().uid === uid) {
-				// doc.data() is never undefined for query doc snapshots
-				console.log(doc.id, " => ", doc.data());
-
 				let postOfUserProfile = doc.data();
 				let publicChecked = postOfUserProfile.status == "Public" ? "checked" : "";
 				let privateChecked = postOfUserProfile.status == "Private" ? "checked" : "";
@@ -126,47 +115,42 @@ dbUid.collection("Users").orderBy("dates", "desc")
 				<label><input type="radio" name="${doc.id}radioForStatusProfile" value="Public" ${publicChecked}>Public</label>
 				<label><input type="radio" name="${doc.id}radioForStatusProfile" value="Private" ${privateChecked}>Private</label>
 				<section id="boxForBtnSaveCancelProfile">
-					<button class= "saveButtonProfile" id="${doc.id}saveButton" data-id="${doc.id}">Guardar</button>
-					<button class= "cancel" id="${doc.id}cancelButton" data-id="${doc.id}">Cancelar</button>
+					<button class= "saveButtonProfile" id="${doc.id}saveButton" data-id="${doc.id}">Save</button>
+					<button class= "cancel" id="${doc.id}cancelButton" data-id="${doc.id}">Cancel</button>
 				</section>
 			</section>
 			<section id="${doc.id}thisPostProfile" class = "postInBox">
 				<p class= "txtdate">${postOfUserProfile.dates}</p>
 				<p class= "txtname">${postOfUserProfile.name}</p>
 				<p class= "txtmns">${postOfUserProfile.message}</p>
-				<button class="buttonEditProfile" id="${doc.id}buttonEdit" data-id="${doc.id}">Editar</button>
-				<button class="buttonDelete" id="${doc.id}buttonDelete" data-id="${doc.id}">Eliminar</button>
+				<button class="buttonEditProfile" id="${doc.id}buttonEdit" data-id="${doc.id}">Edit</button>
+				<button class="buttonDelete" id="${doc.id}buttonDelete" data-id="${doc.id}">Delete</button>
 				<section id="${doc.id}buttonForLikeProfile">
-					<img src="images/heart.svg" id="${doc.id}buttonLike" class="buttonLike" data-id="${doc.id}" alt="botón de me gusta">
-					<p class= "txtlike">Me gusta ${postOfUserProfile.likes}</p>
+					<img src="images/heart.svg" id="${doc.id}buttonLike" class="buttonLike" data-id="${doc.id}" alt="botón de I like it!">
+					<p class= "txtlike">I like it! ${postOfUserProfile.likes}</p>
 				</section>
 			</section>`
 
 			};
 		});
-
 		let buttonsProfile = document.getElementsByClassName("buttonDelete");
 		for (let i = 0; i < buttonsProfile.length; i++) {
 			buttonsProfile[i].addEventListener("click", deleteButton);
 		};
-
 		let editButtonsProfile = document.getElementsByClassName("buttonEditProfile");
 		for (let i = 0; i < editButtonsProfile.length; i++) {
 			editButtonsProfile[i].addEventListener("click", () => {
 				let docId = editButtonsProfile[i].getAttribute("data-id");
-				console.log("Di click");
 				document.getElementById(`${docId}inputEditPostProfile`).style.display = "block";
 				document.getElementById(`${docId}thisPostProfile`).style.display = "none";
 				document.getElementById(`${docId}buttonForLikeProfile`).style.display = "none";
 			});
 		};
 
-
 		let cancelProfile = document.getElementsByClassName("cancel");
 		for (let i = 0; i < cancelProfile.length; i++) {
 			cancelProfile[i].addEventListener("click", () => {
 				let docId = cancelProfile[i].getAttribute("data-id");
-				console.log("Di click");
 				document.getElementById(`${docId}inputEditPostProfile`).style.display = "none";
 				document.getElementById(`${docId}thisPostProfile`).style.display = "block";
 				document.getElementById(`${docId}buttonForLikeProfile`).style.display = "block";
@@ -187,13 +171,9 @@ dbUid.collection("Users").orderBy("dates", "desc")
 
 
 firebase.auth().onAuthStateChanged(function(user) {
-	console.log("in: data.js onAuthStateChanged");
 	if (user && user.emailVerified) {
-		console.log("usuario conectado");
-		console.log(user);
 		localStorage.setItem("name", user.displayName);
 		localStorage.setItem("uid", user.uid);
-		//User is signed in.
 		const obj = {
 			name: user.displayName,
 			email: user.email,
@@ -206,60 +186,40 @@ firebase.auth().onAuthStateChanged(function(user) {
 		 		<button class="buttonEditPhotoProfile">Cambiar</button>
 		 </section>` ;
 	} else {
-		// User is signed out.
-		console.log("usuario desconectado");
 	};
 })
-
-
-
 const deleteButton = (event) => {
-
-	// messageToDelete =
 	let idOfPost = event.target.getAttribute("data-id");
-		if (confirm("¿Estás seguro que deseas eliminar esta publicación?")) {
+		if (confirm("Are you sure you want to delete this post?")) {
 		window.data.deleteFunction(idOfPost);
 	}
 };
-
-
 const editPost = (event) => {
-
 	let idOfPost = event.target.getAttribute("data-id");
 	let newStatus = document.querySelector(`[name="${idOfPost}radioForStatus"]:checked`).value;
 	let newPost = document.getElementById(`${idOfPost}editPostInput`).value;
-	// messageToDelete =
 	window.data.editFunction(idOfPost, newStatus, newPost);
 };
 
 const editPostProfile = (event) => {
-
 	let idOfPost = event.target.getAttribute("data-id");
 	let newStatus = document.querySelector(`[name="${idOfPost}radioForStatusProfile"]:checked`).value;
 	let newPost = document.getElementById(`${idOfPost}editPostInputProfile`).value;
-	// messageToDelete =
 	window.data.editFunction(idOfPost, newStatus, newPost);
 };
 
 const signOutButton = () => {
-	console.log("in: button.js signOutButton");
-/*	window.data.signOutFunction();*/
 	location.assign("index.html");
 };
 
 const createPostFunction = (docRef) => {
-	console.log("in: button.js createPostFunction");
-	// let name = profile.value;
-	// console.log(name);
 	let status = document.querySelector("[type=radio]:checked").value;
 	let message = timelinePost.value;
 	let day = new Date().toLocaleDateString();
 	let hour = new Date().toLocaleTimeString();
 	let dates = " ";
 	dates = day + " " + hour;
-	console.log(dates);
 	let saveResultOfFunction = window.data.createPost(message, status, dates);
-
 	if (saveResultOfFunction != "") {
 		alertForPostEmpty.innerHTML = "Escribe un mensaje para empezar a Post."
 	}
@@ -267,32 +227,19 @@ const createPostFunction = (docRef) => {
 };
 
 const createPostFunctionProfile = (docRef) => {
-	console.log("in: button.js createPostFunction");
-	// let name = profile.value;
-	// console.log(name);
 	let status = document.querySelector("[type=radio]:checked").value;
 	let message = timelinePostPerfil.value;
 	let day = new Date().toLocaleDateString();
 	let hour = new Date().toLocaleTimeString();
 	let dates = " ";
 	dates = day + " " + hour;
-	console.log(dates);
 	let saveResultOfFunction = window.data.createPost(message, status, dates);
 	timelinePostPerfil.value = "";
 	if (saveResultOfFunction != "") {
 		alertForPostEmptyProfile.innerHTML = "Escribe un mensaje para empezar a Post."
 	}
 };
-
-/*const editPost = (event) => {
-let idOfPost = event.target.id;
-
-// messageToDelete =
-window.data.editFunction(idOfPost);
-};*/
-
 const sendLikes = (event) => {
-	console.log("hola");
 	let idOfPost = event.target.getAttribute("data-id");
 	window.data.likesFunction(idOfPost);
 };
@@ -309,10 +256,7 @@ const goToHomePage = () => {
 
 const security = firebase.auth().onAuthStateChanged(function(user) {
 	if (user && user.emailVerified) {
-		console.log("hello");
 	} else {
-		// User is signed out.
-		console.log("usuario desconectado");
 		location.assign("index.html");
 	};
 });
