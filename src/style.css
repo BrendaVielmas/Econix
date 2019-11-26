@@ -340,7 +340,6 @@ input[type="radio"]{
   #sectionWithPost{
     display: block;
     margin: auto; 
-    text-align: center;
   }
   p{
     font-size: 2em;

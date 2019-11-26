@@ -215,7 +215,7 @@ const createPostFunction = (docRef) => {
 	dates = day + " " + hour;
 	let saveResultOfFunction = window.data.createPost(message, status, dates);
 	if (saveResultOfFunction != "") {
-		alertForPostEmpty.innerHTML = "Escribe un mensaje para empezar a Post."
+		alertForPostEmpty.innerHTML = "Write a message to start posting."
 	}
 	timelinePost.value = "";
 };
@@ -230,7 +230,7 @@ const createPostFunctionProfile = (docRef) => {
 	let saveResultOfFunction = window.data.createPost(message, status, dates);
 	timelinePostPerfil.value = "";
 	if (saveResultOfFunction != "") {
-		alertForPostEmptyProfile.innerHTML = "Escribe un mensaje para empezar a Post."
+		alertForPostEmptyProfile.innerHTML = "Write a message to start posting."
 	}
 };
 const sendLikes = (event) => {
