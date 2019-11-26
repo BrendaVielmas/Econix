@@ -426,14 +426,7 @@ input[type="radio"]{
   transform: scale(2);
   margin: .9rem;
 }
-#imgProfile{
-  display: inline-block;
-  width: 10.75rem;
-  height: 10.75rem;
-  border-radius: 9.37rem;
-  margin-right: 2rem;
-  text-align: center;
-}
+
 #buttonForLike{
   text-align: left;
 }
@@ -445,10 +438,7 @@ input[type="radio"]{
   height: 3rem;
   opacity: .6;
 }
-#profile{
-  margin: auto;
-  display: block;
-}
+
 #sectionWithUidPost{
 text-align: center;
 }
