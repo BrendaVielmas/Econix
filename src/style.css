@@ -11,13 +11,6 @@ body, html {
   background-position: center center;
   background-size: cover;
 }
-.demoBox{
-  float: inline-end;
-  width: 70%;
-  border: solid rgb(124, 185, 134);
-  margin-left: auto;
-  margin-right: auto;
-}
 #mainHome{
   margin: auto; 
   display: block;
@@ -343,10 +336,6 @@ input[type="radio"]{
     margin-left: 2rem;
     margin-right: 2rem;
     vertical-align: middle;
-  }
-  .demoBox{
-    width: 20%;
-    
   }
   #sectionWithPost{
     width: 90%;
