@@ -47,7 +47,7 @@ window.data = {
 	},
 
 	goTimeLine: () => {
-		location.assign("muro.html");
+		location.assign("home.html");
 	},
 
 

@@ -56,7 +56,7 @@ let uiConfig = {
 	},
 	
 	signInFlow: 'popup',
-	signInSuccessUrl: 'muro.html',
+	signInSuccessUrl: 'home.html',
 	signInOptions: [
 	
 		firebase.auth.GoogleAuthProvider.PROVIDER_ID
